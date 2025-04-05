@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Find My Project Partner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+    body {
+      background: url('https://images.unsplash.com/photo-1581090700227-1e8e8dd13c35?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .brand-btn, .nav-link {
+      background: #fff;
+      color: #2c3e50;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-left: 10px;
+      transition: 0.3s;
+    }
+
+    .brand-btn:hover, .nav-link:hover {
+      background: #f0f0f0;
+    }
+
+    .categories-section {
+      background: rgba(255, 255, 255, 0.9);
+      color: #2c3e50;
+      padding: 40px 20px 20px;
+      text-align: center;
+    }
+
+    .category-grid {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .category {
+      position: relative;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .category-desc {
+      display: none;
+      position: absolute;
+      top: 30px;
+      left: 0;
+      background: #fff;
+      color: #2c3e50;
+      padding: 10px;
+      border-radius: 8px;
+      width: 250px;
+      font-weight: normal;
+      text-align: left;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      z-index: 5;
+    }
+
+    .category-desc br {
+      content: "";
+      display: block;
+      margin: 8px 0;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .category:hover .category-desc {
+      display: block;
+    }
+
+    .mid-section {
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.8);
+      color: #2c3e50;
+      text-align: center;
+    }
+
+    .main-heading {
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .intro-text {
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+
+    .features-section {
+      background: #fff;
+      color: #2c3e50;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .features-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 20px;
+    }
+
+    .feature-box {
+      max-width: 300px;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .feature-box h3 {
+      font-size: 1.3rem;
+      color: #2980b9;
+      margin-bottom: 10px;
+    }
+
+    .feature-box p {
+      font-size: 1rem;
+      line-height: 1.6;
+      display: none;
+    }
+
+    .feature-box.active p {
+      display: block;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.1);
+      font-size: 0.9rem;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <a href="#" class="brand-btn">Find My Project Partner</a>
+    <div>
+      <a href="signup.html" class="nav-link">Sign Up</a>
+      <a href="login.html" class="nav-link" id="auth-link">Login</a>
+    </div>
+  </header>
+
+  <section class="categories-section">
+    <div class="category-grid">
+      <div class="category">LinkedIn Match
+        <div class="category-desc">
+          Instantly discover LinkedIn profiles that match your project teammate needs.<br>
+          Auto-generated search links tailored to your skills and roles.
+        </div>
+      </div>
+      <div class="category">Resume Scanner
+        <div class="category-desc">
+          Smart teammate suggestions based on resumes uploaded by users.<br>
+          Skills and experience auto-extracted to match quality profiles.
+        </div>
+      </div>
+      <div class="category">Open to Work Pool
+        <div class="category-desc">
+          Access a live pool of users ready to join hackathons and projects.<br>
+          Filter candidates by availability, mode, and expertise.
+        </div>
+      </div>
+      <div class="category">GitHub Explorer
+        <div class="category-desc">
+          Get project suggestions from GitHub based on your tech stack.<br>
+          Discover active contributors and collaborators.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mid-section">
+    <h1 class="main-heading">Link_Sqiard</h1>
+    <p class="intro-text">Connecting students and professionals to collaborate on impactful projects. Join our platform to discover potential project partners who align with your goals and expertise.</p>
+  </section>
+
+  <section class="features-section">
+    <div class="features-grid">
+      <div class="feature-box" onclick="toggleFeature(this)">
+        <h3>Smart Matching</h3>
+        <p>Our system intelligently connects you with partners who share your interests, goals, and complementary skill sets to maximize project success.</p>
+      </div>
+      <div class="feature-box" onclick="toggleFeature(this)">
+        <h3>Collaborative Tools</h3>
+        <p>Access built-in communication and project management tools to make teamwork smooth, organized, and efficient.</p>
+      </div>
+      <div class="feature-box" onclick="toggleFeature(this)">
+        <h3>Verified Profiles</h3>
+        <p>Work confidently with partners whose credentials and experiences are verified, ensuring trust and professionalism.</p>
+      </div>
+      <div class="feature-box" onclick="toggleFeature(this)">
+        <h3>For Students & Professionals</h3>
+        <p>Whether you're in academia or industry, our platform bridges the gap to help you discover the ideal collaborator for any project.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Link_Sqiard. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleFeature(element) {
+      element.classList.toggle('active');
+    }
+
+    // Display user's name if logged in
+    window.onload = function () {
+      const user = localStorage.getItem('username');
+      if (user) {
+        document.getElementById('auth-link').innerText = user;
+        document.getElementById('auth-link').href = "#";
+      }
+    };
+  </script>
+</body>
+</html>

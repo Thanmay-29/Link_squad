@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up</title>
+  <style>
+    body {
+      background: #2c3e50;
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    form {
+      background: #34495e;
+      padding: 40px;
+      border-radius: 12px;
+      width: 350px;
+      display: flex;
+      flex-direction: column;
+    }
+    input, select {
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+    }
+    button {
+      padding: 10px;
+      background: #1abc9c;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <h2>Sign Up</h2>
+    <input type="email" placeholder="Email" required />
+    <input type="text" placeholder="Username" required />
+    <input type="text" placeholder="Full Name" required />
+    <input type="password" placeholder="Password" required />
+    <input type="file" accept=".pdf,.doc,.docx" />
+    <select required>
+      <option value="">Open to Work?</option>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+    <button type="submit">Register</button>
+  </form>
+</body>
+</html>
